@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
+            $table->string('property_id');
+            $table->string('customer_id');
+            $table->string('agent_id');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */

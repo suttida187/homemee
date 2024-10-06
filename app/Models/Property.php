@@ -15,6 +15,8 @@ class Property extends Model
         'price',
         'area',
         'status',
-        'description'
+        'description',
+        'img'
+        
     ];
 }
