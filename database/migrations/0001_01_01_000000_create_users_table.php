@@ -19,8 +19,6 @@ return new class extends Migration
             $table->string('password');
             $table->string('phone_number');
             $table->string('address');
-            $table->string('preferred_type');
-            $table->string('budget');
             $table->rememberToken();
             $table->timestamps();
         });
