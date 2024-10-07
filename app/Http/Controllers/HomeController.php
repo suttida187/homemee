@@ -22,9 +22,21 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        $query = DB::table('properties')->get();
+        $search = $request->search;
+        $query = DB::table('properties');
+        if ($request->all()) {
+            $query = $query
+                ->where('property_name', 'LIKE', "%$search%")
+                ->orWhere('property_type', 'LIKE', "%$search%")
+                ->orWhere('location', 'LIKE', "%$search%")
+                ->orWhere('price', 'LIKE', "%$search%")
+                ->get();
+        } else {
+            $query = $query
+                ->get();
+        }
         return view('home',compact('query'));
     }
 }

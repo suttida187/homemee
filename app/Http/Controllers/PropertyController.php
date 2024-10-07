@@ -114,15 +114,15 @@ class PropertyController extends Controller
     public function destroy(string $id)
     {
         $member = Property::find($id);
-        $img = json_decode($member->img);
+              $img = json_decode($member->img);
 
-        foreach( $img as $image) {
-            $image_path = public_path().'/img/product/'.$image;
-            if (file_exists($image_path)) {
-                // ถ้ามีไฟล์อยู่จริง จึงลบ
-                unlink($image_path);
+            foreach( $img as $image) {
+                $image_path = public_path().'/img/product/'.$image;
+                if (file_exists($image_path)) {
+                    // ถ้ามีไฟล์อยู่จริง จึงลบ
+                    unlink($image_path);
+                }
             }
-        }
         $member->delete();
         return redirect('home')->with('message', "ลบสำเร็จ" );
     }

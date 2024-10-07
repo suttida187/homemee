@@ -50,7 +50,8 @@
                                     href="{{ url('home') }}">อสังหาริมทรัพย์</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">เอเจนซี่</a>
+                                <a class="nav-link active" aria-current="page" 
+                                    href="{{ url('agent-index') }}">เอเจนซี่</a>
                             </li>
                             @if (session('message'))
                                 <p class="text-center mt-2 ml-5" style="color: green"> {{ session('message') }}</p>

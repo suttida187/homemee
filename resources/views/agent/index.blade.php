@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row agent-center">
             <div class="col-md-10">
-                <a href="{{ url('property-create') }}">
+                <a href="{{ url('agent-create') }}">
                     <button type="button" class="btn btn-primary m-3 col-3">
-                        เพิ่มอสังหา
+                        เพิ่มเอเจน
                     </button>
                 </a>
                 <div class="card">
@@ -22,14 +22,11 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">ลำดับ</th>
-                                <th scope="col">ชื่ออสังหา</th>
-                                <th scope="col">ประเภททรัพย์สิน</th>
-                                <th scope="col">ที่ตั้ง</th>
-                                <th scope="col">ราคา</th>
-                                <th scope="col">พื้นที่</th>
-                                <th scope="col">สถานะ</th>
-                                <th scope="col">รายละเอียด</th>
+                                <th scope="col">ชื่อตัวแทนขาย</th>
+                                <th scope="col">นามสกุลตัวแทนขาย</th>
+                                <th scope="col">หมายเลขโทรศัพท์</th>
+                                <th scope="col">อีเมลของตัวแทนขาย</th>
+                                <th scope="col">รายชื่ออสังหาริมทรัพย์ที่ตัวแทนรับผิดชอบ</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,23 +36,12 @@
                             @foreach ($query as $item)
                                 <tr>
                                     <th scope="row">{{ $i++ }}</th>
-                                    <td>{{ $item->property_name }}</td>
-                                    <td>{{ $item->property_type }}</td>
-                                    <td>{{ $item->location }}</td>
-                                    <td>{{ $item->price }}</td>
-                                    <td>{{ $item->area }}</td>
-                                    <td>{{ $item->status }}</td>
-                                    <td>{{ $item->description }}</td>
-                                    <td>
-                                        @php
-                                            $img_url = json_decode(htmlspecialchars_decode($item->img));
-                                        @endphp
-                                        @foreach ($img_url as $url)
-                                            <img src="{{ URL::asset('img/product/' . $url) }}"
-                                                class="img-thumbnail d-inline-block" alt="..."
-                                                style="width: 100px; height: auto;">
-                                        @endforeach
-                                    </td>
+                                    <td>{{ $item->first_name }}</td>
+                                    <td>{{ $item->last_name }}</td>
+                                    <td>{{ $item->phone_number }}</td>
+                                    <td>{{ $item->email }}</td>
+                                    <td>{{ $item->assigned_properties }}</td>
+                         
                                     <td>
                                         <a href="{{ url('property-edit',$item->id) }}"><button type="button" class="btn btn-primary">แก้ไข</button></a>
                                     </td>
