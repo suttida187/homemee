@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $query = DB::table('properties')->get();
+    return view('welcome',compact('query'));
 });
 
 Auth::routes();
