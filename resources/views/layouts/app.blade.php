@@ -25,15 +25,14 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                @if (Route::has('login'))
+                @if (Auth::check())
                     <a class="navbar-brand" href="{{ url('home') }}">
                         เว็บอสังหา
                     </a>
-                
                 @else
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    เว็บอสังหา
-                </a>
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        เว็บอสังหา
+                    </a>
                 @endif
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -44,7 +43,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        @if (Auth::check())
+                            <li class="nav-item">
 
+                                <a class="nav-link active" aria-current="page"
+                                    href="{{ url('home') }}">อสังหาริมทรัพย์</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">เอเจนซี่</a>
+                            </li>
+                            @if (session('message'))
+                                <p class="text-center mt-2 ml-5" style="color: green"> {{ session('message') }}</p>
+                            @endif
+
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -63,14 +75,6 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page"
-                                    href="{{ url('home') }}">อสังหาริมทรัพย์</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">เอเจนซี่</a>
-                            </li>
-
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
