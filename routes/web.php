@@ -22,3 +22,4 @@ Route::get('/agent-index', [App\Http\Controllers\AgentController::class, 'index'
 Route::get('/agent-edit/{id}', [App\Http\Controllers\AgentController::class, 'edit'])->name('agent-edit');
 Route::put('/agent-update/{id}', [App\Http\Controllers\AgentController::class, 'update'])->name('agent-update');
 Route::get('/agent-delete/{id}', [App\Http\Controllers\AgentController::class, 'destroy'])->name('agent-delete');
+Route::post('/search-agent', [App\Http\Controllers\AgentController::class, 'index'])->name('search-agent');

@@ -12,7 +12,7 @@
                 <div class="card">
                 <div class="m-3"> 
                     <form id="multiStepForm" class="multi-step-form d-flex" method="POST"
-                    action="{{ route('search') }}" enctype="multipart/form-data">
+                    action="{{ route('search-agent') }}" enctype="multipart/form-data">
                     @csrf
                     <input class="form-control me-2" type="search" placeholder="Search" name="search"
                         aria-label="Search">
