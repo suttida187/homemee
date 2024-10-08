@@ -103,8 +103,8 @@ class AgentController extends Controller
      */
     public function destroy(string $id)
     {
-        DB::table('agent')->where('agent_id', $id)->delete();
+        DB::table('agents')->where('id', $id)->delete();
 
-        return redirect()->route('agent')->with('success', 'ข้อมูลถูกลบเรียบร้อยแล้ว');
+        return redirect('agent-index')->with('message', 'ข้อมูลถูกลบเรียบร้อยแล้ว');
     }
 }
