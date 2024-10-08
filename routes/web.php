@@ -19,3 +19,5 @@ Route::post('/search', [App\Http\Controllers\HomeController::class, 'index'])->n
 Route::get('/agent-create', [App\Http\Controllers\AgentController::class, 'create'])->name('agent-create');
 Route::post('/agent-store', [App\Http\Controllers\AgentController::class, 'store'])->name('agent-store');
 Route::get('/agent-index', [App\Http\Controllers\AgentController::class, 'index'])->name('agent-index');
+Route::get('/agent-edit/{id}', [App\Http\Controllers\AgentController::class, 'edit'])->name('agent-edit');
+Route::put('/agent-update/{id}', [App\Http\Controllers\AgentController::class, 'update'])->name('agent-update');

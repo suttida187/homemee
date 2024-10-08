@@ -43,14 +43,15 @@
                                     <td>{{ $item->assigned_properties }}</td>
                          
                                     <td>
-                                        <a href="{{ url('property-edit',$item->id) }}"><button type="button" class="btn btn-primary">แก้ไข</button></a>
+                                        <a href="{{ url('agent-edit',$item->id) }}"><button type="button" class="btn btn-primary">แก้ไข</button></a>
                                     </td>
                                     <td>
-                                        <a href="{{ url('property-delete', $item->id) }}" onclick="return confirm('คุณแน่ใจหรือไม่ว่าต้องการลบรายการนี้?');">
+                                        <a href="{{ url('agent-delete', $item->id) }}" onclick="return confirm('คุณแน่ใจหรือไม่ว่าต้องการลบรายการนี้?');">
                                             <button type="button" class="btn btn-danger">ลบ</button>
                                         </a>
                                         
                                     </td>
+                                    
                                 </tr>
                             @endforeach
                         </tbody>
