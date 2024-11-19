@@ -13,7 +13,7 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="property_name" class="col-md-4 col-form-label text-md-end">{{ __('property') }}</label>
+                            <label for="property_name" class="col-md-4 col-form-label text-md-end">ชื่ออสังหา</label>
 
                             <div class="col-md-6">
                                 <input id="property_name" type="text" class="form-control @error('property_name') is-invalid @enderror" name="property_name" value="{{ old('property_name') }}" required autocomplete="property_name" autofocus>
@@ -27,7 +27,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="property_type" class="col-md-4 col-form-label text-md-end">{{ __('property type') }}</label>
+                            <label for="property_type" class="col-md-4 col-form-label text-md-end">ประเภททรัพย์สิน</label>
 
                             <div class="col-md-6">
                                 <input id="property_type" type="text" class="form-control @error('property_type') is-invalid @enderror" name="property_type" value="{{ old('property_type') }}" required autocomplete="property_type" autofocus>
@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="location" class="col-md-4 col-form-label text-md-end">{{ __('location') }}</label>
+                            <label for="location" class="col-md-4 col-form-label text-md-end">ที่ตั้ง</label>
 
                             <div class="col-md-6">
                                 <input id="location" type="text" class="form-control @error('location') is-invalid @enderror" name="location" value="{{ old('location') }}" required autocomplete="location" autofocus>
@@ -55,7 +55,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="price" class="col-md-4 col-form-label text-md-end">{{ __('price') }}</label>
+                            <label for="price" class="col-md-4 col-form-label text-md-end">ราคา</label>
 
                             <div class="col-md-6">
                                 <input id="price" type="text" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required autocomplete="price" autofocus>
@@ -69,7 +69,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="area" class="col-md-4 col-form-label text-md-end">{{ __('area') }}</label>
+                            <label for="area" class="col-md-4 col-form-label text-md-end">พื้นที่</label>
 
                             <div class="col-md-6">
                                 <input id="area" type="text" class="form-control @error('area') is-invalid @enderror" name="area" value="{{ old('area') }}" required autocomplete="price" autofocus>
@@ -83,7 +83,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('status') }}</label>
+                            <label for="status" class="col-md-4 col-form-label text-md-end">สถานะ</label>
 
                             <div class="col-md-6">
                                 <input id="status" type="text" class="form-control @error('status') is-invalid @enderror" name="status" value="{{ old('status') }}" required autocomplete="status" autofocus>
@@ -97,7 +97,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('description') }}</label>
+                            <label for="description" class="col-md-4 col-form-label text-md-end">รายละเอียด</label>
 
                             <div class="col-md-6">
                                 <input id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" required autocomplete="description" autofocus>
@@ -111,7 +111,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="img" class="col-md-4 col-form-label text-md-end">{{ __('img') }}</label>
+                            <label for="img" class="col-md-4 col-form-label text-md-end">อัพโหลดรูปภาพ</label>
 
                             <div class="col-md-6">
                                 <input id="img" type="file" class="form-control @error('img') is-invalid @enderror" name="img[]" value="{{ old('img') }}" required autocomplete="img" autofocus accept="image/*"
